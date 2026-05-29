@@ -1,0 +1,23 @@
+model: gpt-4o
+base_url: null
+temperature: 0.0
+max_retries: 3
+stop_after_confidence: 5
+
+prompts:
+  system: system_prompt.md
+  step: step_prompt.md
+
+chunker:
+  max_events: 25
+  max_event_types: 3
+  max_hours: 4.0
+  stop_at:
+    event_type: SERVICE
+    description: "Service: SURG"
+  exclude_sources:
+    - ICU
+  exclude_event_types:
+    - DISCHARGE_DX
+    - DISCHARGE_FREETEXTDX
+    - ED_DIAGNOSIS

@@ -1,0 +1,23 @@
+model: gemini-2.0-flash
+base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+api_key_env: GEMINI_API_KEY
+temperature: 0.0
+max_retries: 3
+max_steps: 20
+stop_after_confidence: 5
+
+prompts:
+  system: system_prompt.md
+  step: step_prompt.md
+
+chunker:
+  max_events: 25
+  max_event_types: 3
+  max_hours: 4.0
+  exclude_sources:
+    - ICU
+  exclude_event_types:
+    - DISCHARGE_DX
+    - DISCHARGE_FREETEXTDX
+    - ED_DIAGNOSIS
+  max_chunks: 50
